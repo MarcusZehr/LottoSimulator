@@ -1,0 +1,25 @@
+﻿.rotate3D {
+  -webkit-animation: rotate3dTransition 5s infinite;
+          animation: rotate3dTransition 5s infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+
+@keyframes rotate3dTransition {
+  0% {
+    -webkit-transform: rotate3d(0,0,0,0deg);
+            transform: rotate3d(0,0,0,0deg);
+  }
+  33% {
+    -webkit-transform: rotate3d(1,1,0,3600deg);
+            transform: rotate3d(1,1,0,3600deg);
+  }
+  60% {
+    -webkit-transform: rotate3d(1,1,0,180deg);
+            transform: rotate3d(1,1,0,180deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0,0,0,180deg);
+            transform: rotate3d(0,0,0,180deg);
+  }
+}

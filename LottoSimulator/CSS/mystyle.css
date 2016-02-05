@@ -1,0 +1,141 @@
+﻿html, body {
+    height: 100%;
+}
+
+body {
+    padding: 25px;
+    background: linear-gradient(black, white);
+    min-width: 480px;
+}
+
+header {
+    display: inline-block;
+    font-style: italic;
+    text-shadow: 2px 2px 3px gray;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+hr{
+    border: 0;
+    margin: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+button {
+    border-radius: 10px;
+}
+
+button[disabled] {
+    color: grey;
+}
+
+/* In Chrome browsers, remove the number spinners*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    min-width: 500px;
+}
+
+.title {
+    margin: 0;
+}
+
+.lottoHeader {
+    font-style: normal;
+    text-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lottoHeader ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lottoHeader li{
+    vertical-align: middle;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align:center;
+    font-weight: bold;
+    border-radius:50px;
+}
+
+.lottoHeader li:nth-child(-n+5) {
+    padding-top: 9px;
+    font-size:20px;
+    color:black;
+    background: radial-gradient(white 20%, black);
+}
+
+.lottoHeader li:nth-child(6) {
+    padding-top: 13px;
+    font-size:15px;
+    color: white;
+    background: radial-gradient(red 10%, black);
+}
+
+.pickNumber {
+    display: inline-block;
+    width: 30px;
+    font-size: 25px;
+    text-shadow: 2px 2px 2px grey;
+}
+
+.lottoNumber {
+    color: black;
+    border-radius: 30px;
+    border-style: none;
+    width: 55px;
+    text-align: center;
+    padding: 15px 0 15px 0;
+    font-size: 20px;
+    background: radial-gradient(white 20%, black);
+}
+
+.powerBall {
+    background: radial-gradient(red 10%, black);
+    color: white;
+}
+
+.randomButton {
+    float: right;
+    margin-top:7px;
+    padding-top: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+#playerPicks {
+    height: 290px;
+    max-width: 480px;
+    overflow-y: scroll;
+    margin: 5px;
+}
+
+#statusContainer {
+    float: right;
+    /*min-width: 300px;*/
+    background-color:mintcream;
+    padding: 10px;
+    border-radius: 20px;
+    border:1px solid black;
+}
+
+.bordered {
+    border: 1px solid black;
+}
