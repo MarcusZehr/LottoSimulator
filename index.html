@@ -72,7 +72,7 @@
                 <button ng-click="addNewPick(picks)">Add another pick</button>
                 <button ng-if="picks.length > 1" ng-click="removePick(picks)">Remove pick</button>
                 <button ng-click="shuffleAll(picks)">Shuffle All</button>
-                <button ng-click="drawNumbers(draws[0])" ng-disabled="picksAreInvalid(picks)">Play the Lotto</button>
+                <button ng-click="drawNumbers(draws)" ng-disabled="picksAreInvalid(picks)">Play the Lotto</button>
             </div>
             
             <div id="drawnNumbers" class="col-sm-12" data-ng-repeat="draw in draws">

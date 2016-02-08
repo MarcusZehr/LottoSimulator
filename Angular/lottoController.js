@@ -55,31 +55,28 @@
 
         for (x in picks) {
             if (picks.hasOwnProperty(x)) {
-                console.log(x + " -> " + picks[x]);
+                console.log(x + " -> (" + picks[x].w1 + ", " + picks[x].w2 + ", " + picks[x].w3 + ", " + picks[x].w4 + ", " + picks[x].w5 + ", " + picks[x].pb + ")");
             }
         }
     };
 
     $scope.drawNumbers = function (draw) {
 
-        var _uniqueRandomNumbers = lottoService.generateUniqueWhiteBalls();
+        for (var i = 0; i < draw.length; i++) {
+            var _uniqueRandomNumbers = lottoService.generateUniqueWhiteBalls();
 
-        draw.w1 = _uniqueRandomNumbers[0];
-        draw.w2 = _uniqueRandomNumbers[1];
-        draw.w3 = _uniqueRandomNumbers[2];
-        draw.w4 = _uniqueRandomNumbers[3];
-        draw.w5 = _uniqueRandomNumbers[4];
+            draw[i].w1 = _uniqueRandomNumbers[0];
+            draw[i].w2 = _uniqueRandomNumbers[1];
+            draw[i].w3 = _uniqueRandomNumbers[2];
+            draw[i].w4 = _uniqueRandomNumbers[3];
+            draw[i].w5 = _uniqueRandomNumbers[4];
 
-        draw.pb = lottoService.generatePowerBall();
+            draw[i].pb = lottoService.generatePowerBall();
+        }
 
         for (x in draw) {
             if (draw.hasOwnProperty(x)) {
-                console.log(x + " -> " + draw[x]);
-                for (y in x) {
-                    if (draw.hasOwnProperty(y)) {
-                        console.log(y + " -> " + x[y]);
-                    }
-                }
+                console.log(x + " -> (" + draw[x].w1 + ", " + draw[x].w2 + ", " + draw[x].w3 + ", " + draw[x].w4 + ", " + draw[x].w5 + ", " + draw[x].pb + ")");
             }
         }
 
