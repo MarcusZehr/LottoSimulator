@@ -1,1 +1,91 @@
-Hello World!
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="Scripts/angular.js"></script>
+    <script src="Angular/main.js"></script>
+    <script src="Angular/lottoController.js"></script>
+    <script src="Angular/lottoService.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="CSS/mystyle.css" rel="stylesheet" />
+    <link href="CSS/rotatingElements2D.css" rel="stylesheet" />
+    <link href="CSS/rotatingElements3D.css" rel="stylesheet" />
+    <title>Play The Lotto!</title>
+</head>
+<body ng-app="lottoSim" ng-controller="lottoController" ng-init="initialize()">
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm-12">
+                    
+                    <h2 class="title" >Lotto Simulator: 2016 
+                         <ul class="lottoHeader">
+                             <li class="rotateZ">P</li>
+                             <li class="rotateZ">O</li>
+                             <li class="rotateZ">W</li>
+                             <li class="rotateZ">E</li>
+                             <li class="rotateZ">R</li>
+                             <li class="rotateY">Ball</li>
+                         </ul>
+                    </h2>
+                </div>
+            </div>
+        </header>
+        
+        <div class="row">
+            <div id="playerPicks" class="col-sm-8 col-md-6 col-lg-5">
+                <span data-ng-repeat="pick in picks">
+                    <span class="pickNumber">{{picks[pick.index].index + 1}}.</span>
+                    <input class="lottoNumber" type="number" min="1" max="69" ng-model="picks[pick.index].w1">
+                    <input class="lottoNumber" type="number" min="1" max="69" ng-model="picks[pick.index].w2">
+                    <input class="lottoNumber" type="number" min="1" max="69" ng-model="picks[pick.index].w3">
+                    <input class="lottoNumber" type="number" min="1" max="69" ng-model="picks[pick.index].w4">
+                    <input class="lottoNumber" type="number" min="1" max="69" ng-model="picks[pick.index].w5">
+
+                    <input class="lottoNumber powerBall" type="number" min="1" max="26" ng-model="picks[pick.index].pb">
+                    
+                    <button class="randomButton" ng-click="generateRandomLottoNumber(picks[pick.index])" title="Shuffle">
+                        <span class="glyphicon glyphicon-refresh spin"></span>
+                    </button>
+                    <br/>
+                </span>
+            </div>
+            <div class="col-sm-4 col-md-6 col-lg-7">
+                <span id="statusContainer">
+                    <div class="row">
+                        <div class="col-xs-4 col-md-2">Settings:</div>
+                        <div class="col-xs-8 col-md-10"><button class="glyphicon glyphicon-menu-hamburger"></button></div>
+                        <div class="col-xs-4 col-md-2">Spent:</div>
+                        <div class="col-xs-8 col-md-10">$ {{totalSpent}}</div>
+                        <div class="col-xs-4 col-md-2">Won:</div>
+                        <div class="col-xs-8 col-md-10">$ {{totalWon}}</div>
+                        <div class="col-xs-4 col-md-2">Win/Loss:</div>
+                        <div class="col-xs-8 col-md-10">$ {{totalWon - totalSpent}}</div>
+                        <div class="col-xs-12"><hr /></div>
+                        <div class="col-xs-12"><span><h3>YOU WON/LOST</h3></span></div>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <button ng-click="addNewPick(picks)">Add another pick</button>
+                <button ng-if="picks.length > 1" ng-click="removePick(picks)">Remove pick</button>
+                <button ng-click="shuffleAll(picks)">Shuffle All</button>
+                <button ng-click="drawNumbers(draws)" ng-disabled="picksAreInvalid(picks)">Play the Lotto</button>
+            </div>
+            
+            <div id="drawnNumbers" class="col-sm-12" data-ng-repeat="draw in draws">
+                <input class="lottoNumber" type="text" disabled ng-model="draws[draw.index].w1">
+                <input class="lottoNumber" type="text" disabled ng-model="draws[draw.index].w2">
+                <input class="lottoNumber" type="text" disabled ng-model="draws[draw.index].w3">
+                <input class="lottoNumber" type="text" disabled ng-model="draws[draw.index].w4">
+                <input class="lottoNumber" type="text" disabled ng-model="draws[draw.index].w5">
+
+                <input class="lottoNumber powerBall" type="number" disabled ng-model="draws[draw.index].pb">
+            </div>
+        </div>
+    </div>
+    <!--<pre>picks = {{picks | json}}</pre>-->
+</body>
+</html>
