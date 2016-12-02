@@ -13,6 +13,8 @@
     var addNewPickFn = function(picks) {
         var pickNumber = picks.length;
         picks.push({ index: pickNumber, w1: null, w2: null, w3: null, w4: null, w5: null, pb: null });
+        // Automatically scroll to the bottom of #playerPicks when a new pick is added
+        $('#playerPicks').animate({ scrollTop: $('#playerPicks').prop("scrollHeight") }, 500);
     }
 
     var removePickFn = function (picks) {
