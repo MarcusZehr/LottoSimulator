@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="packages/jQuery.1.9.1/Content/Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Angular/main.js"></script>
     <script src="Angular/lottoController.js"></script>
@@ -53,7 +54,8 @@
                 <span id="statusContainer">
                     <div class="row">
                         <div class="col-xs-4 col-md-2">Settings:</div>
-                        <div class="col-xs-8 col-md-10"><button class="glyphicon glyphicon-menu-hamburger"></button></div>
+                        <div class="col-xs-4 col-md-2"><button ng-click="" class="glyphicon glyphicon-menu-hamburger"></button></div>
+                        <div class="col-xs-4 col-md-8"><button ng-click="" class="glyphicon glyphicon-repeat" title="Reset"></button></div>
                         <div class="col-xs-4 col-md-2">Spent:</div>
                         <div class="col-xs-8 col-md-10">$ {{totalSpent}}</div>
                         <div class="col-xs-4 col-md-2">Won:</div>
@@ -61,6 +63,7 @@
                         <div class="col-xs-4 col-md-2">Win/Loss:</div>
                         <div class="col-xs-8 col-md-10">$ {{totalWon - totalSpent}}</div>
                         <div class="col-xs-12"><hr /></div>
+                        <!-- use an ng-if on a bool to check if a user has won -->
                         <div class="col-xs-12"><span><h3>YOU WON/LOST</h3></span></div>
                     </div>
                 </span>
