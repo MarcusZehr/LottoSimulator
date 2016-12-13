@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- This example was mocked off http://blanketjs.org/test/jasmine-custom-build/SpecRunner.html -->
+    <title>Jasmine Spec Runner</title>
+
+    <!-- start with loading jasmine -->
+    <link href="../Content/jasmine/jasmine.css" rel="stylesheet" />
+    <script type="text/javascript" src="../Scripts/jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="../Scripts/jasmine/jasmine-html.js"></script>
+    <script type="text/javascript" src="../Scripts/jasmine/boot.js"></script>
+
+    <!-- include source files here... -->
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular-mocks.js"></script>
+    <script src="../Angular/lottoSim.js"></script>
+    <script src="../Angular/lottoController.js"></script>
+    <script src="../Angular/lottoService.js"></script>
+
+    <!-- include spec files here... -->
+    <script type="text/javascript" src="lottoSimTests.js"></script>
+    <script type="text/javascript" src="Services/lottoServiceTests.js"></script>
+    <script type="text/javascript" src="Controllers/lottoControllerTests.js"></script>
+    <!--<script type="text/javascript" src="specs/acmMapperTests.js"></script>
+    <script type="text/javascript" src="specs/Services/newRequestModalServiceTests.js"></script>
+    <script type="text/javascript" src="specs/Services/acmMapperServiceTests.js"></script>
+    <script type="text/javascript" src="specs/Controllers/newRequestModalControllerTests.js"></script>
+    <script type="text/javascript" src="specs/Controllers/acmMapperControllerTests.js"></script>-->
+
+    <script type="text/javascript">
+            (function () {
+                window.blanketTestJasmineExpected = 2;
+
+                var jasmineEnv = jasmine.getEnv();
+                jasmineEnv.updateInterval = 1000;
+
+                var htmlReporter = new jasmine.HtmlReporter();
+
+                jasmineEnv.addReporter(htmlReporter);
+
+                /* this is just for our automated tests */
+                window.jasmine_phantom_reporter = new jasmine.ConsoleReporter;
+
+                jasmineEnv.addReporter(jasmine_phantom_reporter);
+                /*   */
+
+                jasmineEnv.specFilter = function (spec) {
+                    return htmlReporter.specFilter(spec);
+                };
+
+                var currentWindowOnload = window.onload;
+                window.onload = function () {
+                    if (currentWindowOnload) {
+                        currentWindowOnload();
+                    }
+                    execJasmine();
+                };
+
+                function execJasmine() {
+                    jasmineEnv.execute();
+                }
+
+            })();
+    </script>
+</head>
+<body>
+</body>
+</html>
