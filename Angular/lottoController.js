@@ -1,4 +1,4 @@
-﻿app.controller("lottoController", ['$scope', 'lottoService', 'CostPerTicket', function ($scope, lottoService, CostPerTicket) {
+﻿lottoSim.controller("lottoController", ['$scope', 'lottoService', 'CostPerTicket', function ($scope, lottoService, CostPerTicket) {
 
     $scope.picks = [{ index: 0, w1: null, w2: null, w3: null, w4: null, w5: null, pb: null },
                     { index: 1, w1: null, w2: null, w3: null, w4: null, w5: null, pb: null },

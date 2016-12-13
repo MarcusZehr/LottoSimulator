@@ -1,4 +1,4 @@
-﻿app.service("lottoService", [ function() {
+﻿lottoSim.service("lottoService", [ function() {
 
     var generateUniqueWhiteBallsFn = function()
     {
