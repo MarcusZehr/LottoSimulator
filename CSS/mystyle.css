@@ -121,7 +121,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 #playerPicks {
-    height: 290px;
+    height: 265px;
     max-width: 480px;
     overflow-y: scroll;
     margin: 5px;

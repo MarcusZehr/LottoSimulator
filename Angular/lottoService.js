@@ -2,7 +2,7 @@
 
     var generateUniqueWhiteBallsFn = function()
     {
-        return _shuffle(_availablewhiteBallNumbers, 5);
+        return _shuffle(_availablewhiteBallNumbers, 5).sort(function (a, b) { return a - b });
     };
     
     var generatePowerBallFn = function () {
