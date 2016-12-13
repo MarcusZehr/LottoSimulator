@@ -4,7 +4,6 @@ This Powerball Lottery Simulator has been developed using AngularJS and uses a m
 
 
 Reference web sites for rules/possible future functionality:
-
-  * [http://www.powerball.com/powerball/pb_howtoplay.asp]
-  * [http://adamlamers.com/lottery_simulator]
-  * [http://graphics.latimes.com/powerball-simulator/]
+* http://www.powerball.com/powerball/pb_howtoplay.asp
+* http://adamlamers.com/lottery_simulator
+* http://graphics.latimes.com/powerball-simulator/
