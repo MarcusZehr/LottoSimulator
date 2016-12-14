@@ -29,7 +29,7 @@
     };
 
     $scope.generateRandomLottoNumber = function (pick) {
-        return _generateRandomLottoNumber(pick);
+        _generateRandomLottoNumber(pick);
     };
 
     $scope.shuffleAll = function(picks) {
