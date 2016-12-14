@@ -22,42 +22,6 @@
     <script type="text/javascript" src="lottoSimTests.js"></script>
     <script type="text/javascript" src="Services/lottoServiceTests.js"></script>
     <script type="text/javascript" src="Controllers/lottoControllerTests.js"></script>
-
-    <script type="text/javascript">
-            (function () {
-                window.blanketTestJasmineExpected = 2;
-
-                var jasmineEnv = jasmine.getEnv();
-                jasmineEnv.updateInterval = 1000;
-
-                var htmlReporter = new jasmine.HtmlReporter();
-
-                jasmineEnv.addReporter(htmlReporter);
-
-                /* this is just for our automated tests */
-                window.jasmine_phantom_reporter = new jasmine.ConsoleReporter;
-
-                jasmineEnv.addReporter(jasmine_phantom_reporter);
-                /*   */
-
-                jasmineEnv.specFilter = function (spec) {
-                    return htmlReporter.specFilter(spec);
-                };
-
-                var currentWindowOnload = window.onload;
-                window.onload = function () {
-                    if (currentWindowOnload) {
-                        currentWindowOnload();
-                    }
-                    execJasmine();
-                };
-
-                function execJasmine() {
-                    jasmineEnv.execute();
-                }
-
-            })();
-    </script>
 </head>
 <body>
 </body>
