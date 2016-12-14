@@ -18,6 +18,23 @@
 
     }));
 
+    describe('generateRandomLottoNumber', function() {
+
+        it('should call lottoService to both generate the white balls as well as the powerball', function() {
+            //Arrange
+            var pick = { index: 0, w1: null, w2: null, w3: null, w4: null, w5: null, pb: null };
+            spyOn(lottoService, 'generateUniqueWhiteBalls').and.callThrough();
+            spyOn(lottoService, 'generatePowerBall').and.callThrough();
+
+            //Act
+            $scope.generateRandomLottoNumber(pick);
+
+            //Assert
+            expect(lottoService.generateUniqueWhiteBalls.calls.count()).toEqual(1);
+            expect(lottoService.generatePowerBall.calls.count()).toEqual(1);
+        });
+    });
+
     describe('shuffleAll', function() {
 
         it('should randomize every ball value for every pick in the array', function() {
