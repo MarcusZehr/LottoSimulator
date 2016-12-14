@@ -29,28 +29,12 @@
     };
 
     $scope.generateRandomLottoNumber = function (pick) {
-        var _uniqueRandomNumbers = lottoService.generateUniqueWhiteBalls();
-
-        pick.w1 = _uniqueRandomNumbers[0];
-        pick.w2 = _uniqueRandomNumbers[1];
-        pick.w3 = _uniqueRandomNumbers[2];
-        pick.w4 = _uniqueRandomNumbers[3];
-        pick.w5 = _uniqueRandomNumbers[4];
-
-        pick.pb     = lottoService.generatePowerBall();
+        return _generateRandomLottoNumber(pick);
     };
 
     $scope.shuffleAll = function(picks) {
         for (var i = 0; i < picks.length; i++) {
-            var _uniqueRandomNumbers = lottoService.generateUniqueWhiteBalls();
-
-            picks[i].w1 = _uniqueRandomNumbers[0];
-            picks[i].w2 = _uniqueRandomNumbers[1];
-            picks[i].w3 = _uniqueRandomNumbers[2];
-            picks[i].w4 = _uniqueRandomNumbers[3];
-            picks[i].w5 = _uniqueRandomNumbers[4];
-
-            picks[i].pb = lottoService.generatePowerBall();
+            _generateRandomLottoNumber(picks[i]);
         }
 
         for (x in picks) {
@@ -63,15 +47,7 @@
     $scope.drawNumbers = function (draw) {
 
         for (var i = 0; i < draw.length; i++) {
-            var _uniqueRandomNumbers = lottoService.generateUniqueWhiteBalls();
-
-            draw[i].w1 = _uniqueRandomNumbers[0];
-            draw[i].w2 = _uniqueRandomNumbers[1];
-            draw[i].w3 = _uniqueRandomNumbers[2];
-            draw[i].w4 = _uniqueRandomNumbers[3];
-            draw[i].w5 = _uniqueRandomNumbers[4];
-
-            draw[i].pb = lottoService.generatePowerBall();
+            _generateRandomLottoNumber(draw[i]);
         }
 
         for (x in draw) {
@@ -105,6 +81,22 @@
             (pick.pb == null || pick.pb == ""))
             return true;
         return false;
+    }
+    //#endregion
+
+    //#region Private Functions
+    function _generateRandomLottoNumber(pick) {
+        var uniqueRandomNumbers = lottoService.generateUniqueWhiteBalls();
+
+        pick.w1 = uniqueRandomNumbers[0];
+        pick.w2 = uniqueRandomNumbers[1];
+        pick.w3 = uniqueRandomNumbers[2];
+        pick.w4 = uniqueRandomNumbers[3];
+        pick.w5 = uniqueRandomNumbers[4];
+
+        pick.pb = lottoService.generatePowerBall();
+
+        return pick;
     }
     //#endregion
 
